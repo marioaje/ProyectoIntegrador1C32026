@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <title>Crar Curso</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS v5.3.8 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <header>
+      <!-- place navbar here -->
+    </header>
+    <main>
+      <h2>Crear Curso</h2>
+      <form
+        action="https://paginas-web-cr.com/Api/form/crearcurso.php"
+        method="post"
+      >
+        <div class="mb-3">
+          <label for="" class="form-label">nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            name="nombre"
+            id="nombre"
+            aria-describedby="helpId"
+            placeholder="nombre"
+          />
+          <small id="helpId" class="form-text text-body-secondary"
+            >Help text</small
+          >
+        </div>
+
+        <div class="mb-3">
+          <label for="" class="form-label">descripcion</label>
+          <input
+            type="text"
+            class="form-control"
+            name="descripcion"
+            id="descripcion"
+            aria-describedby="helpId"
+            placeholder="descripcion"
+          />
+          <small id="helpId" class="form-text text-body-secondary"
+            >Help text</small
+          >
+        </div>
+
+        <div class="mb-3">
+          <label for="" class="form-label">tiempo</label>
+          <input
+            type="text"
+            class="form-control"
+            name="tiempo"
+            id="tiempo"
+            aria-describedby="helpId"
+            placeholder="tiempo"
+          />
+          <small id="helpId" class="form-text text-body-secondary"
+            >Help text</small
+          >
+        </div>
+
+        <div class="mb-3">
+          <label for="" class="form-label">usuario</label>
+          <input
+            type="text"
+            class="form-control"
+            name="usuario"
+            id="usuario"
+            aria-describedby="helpId"
+            placeholder="usuario"
+          />
+          <small id="helpId" class="form-text text-body-secondary"
+            >Help text</small
+          >
+        </div>
+
+        <div class="mb-3">
+          <label for="" class="form-label">return_url</label>
+          <input
+            type="text"
+            class="form-control"
+            name="return_url"
+            id="return_url"
+            aria-describedby="helpId"
+            placeholder="return_url"
+            value="http://127.0.0.1:20021/Semana%202/CrearCurso.html"
+          />
+          <small id="helpId" class="form-text text-body-secondary"
+            >Help text</small
+          >
+        </div>
+
+        <button type="reset" class="btn btn-danger">Reset</button>
+
+        <button type="submit" class="btn btn-success">Enviar</button>
+      </form>
+      <!-- 📚 Cursos
+✔ Crear Curso
+
+Método: POST
+Parámetros:
+
+    nombre
+    descripcion
+    tiempo
+    usuario
+    return_url
+
+Implementación de servicios (CRUD):
+https://paginas-web-cr.com/Api/form/crearcurso.php -->
+    </main>
+    <footer>
+      <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Bundle (includes Popper) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
