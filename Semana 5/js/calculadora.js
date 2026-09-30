@@ -24,6 +24,10 @@ document.addEventListener('click', (e) => {
     if (e.target.classList.contains("btn-primary")) {
         e.preventDefault();
         alert("Operaciones");
+
+
+
+        //operaciones
     }
 
 
@@ -37,27 +41,29 @@ function limpiar() {
 
 function operaciones(n1, n2, op) {
 
+    const num1 = parseFloat(n1);
+    const num2 = parseFloat(n2);
 
 
     switch (op) {
         case '+':
-            console.log("Opcion 1");
+            return num1 + num2;
             break;
 
         case '-':
-            console.log("Opcion 6");
+            return num1 - num2;
             break;
 
         case '*':
-            console.log("Opcion 12");
+            return num1 * num2;
             break;
 
         case '/':
-            console.log("Opcion 12");
+            return num1 / num2;
             break;
 
         default:
-            console.log("Opcion indefinida");
+            return "Error";
             break;
     }
 
