@@ -1,35 +1,11 @@
 <!doctype html>
-<html lang="en" data-bs-theme="light">
+<html lang="en">
   <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- Bootstrap CSS v5.3.8 -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
   </head>
-
   <body>
-    <header>
-      <!-- place navbar here -->
-    </header>
-    <main></main>
-    <footer>
-      <!-- place footer here -->
-    </footer>
-    <!-- Bootstrap JavaScript Bundle (includes Popper) -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
-
     <script>
       // Todo mi codigo de programacion
       //   console.log("Imprimir en la consola del navegador");
@@ -119,7 +95,43 @@
         console.log("contador " + contador);
         contador++;
       } while (contador < 10);
+
+      for (let i = 0; i < 25; i++) {
+        console.log("contador " + i);
+      }
+
+      let arreglos = ["Mario", "Isaac", "Alberto"];
+
+      arreglos.forEach((elementItem) => {
+        console.log("Su nombre es: " + elementItem);
+      });
+
+      saludoss();
+
+      function saludoss() {
+        console.log("saludos bienvenidos al sistema");
+      }
+
+      saludoPersonalizado("Profe Mario");
+      function saludoPersonalizado(parametro) {
+        console.log("saludos bienvenidos al sistema " + parametro);
+      }
+
+      console.log(saludoPersonalizadoretornor("Profe Mario"));
+
+      function saludoPersonalizadoretornor(parametro) {
+        return "saludos bienvenidos al sistema " + parametro;
+      }
       // alert(nombre);
+
+      let estudiante = {
+        id: 12,
+        nombre: "Profe",
+        edad: 44,
+        estado: true,
+      };
+
+      console.log(estudiante);
     </script>
   </body>
 </html>
