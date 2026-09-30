@@ -1,4 +1,5 @@
 const inputResultado = document.getElementById('resultado');
+let resultadoAnterio = 0;
 
 inputResultado.value = 90;
 
@@ -7,10 +8,7 @@ document.addEventListener('click', (e) => {
     const botonNumero = e.target.closest(".btn-success");
     if (botonNumero) {
         e.preventDefault();
-
-
         const valor = botonNumero.getAttribute('data-valor');
-
         inputResultado.value += valor;
 
     }
@@ -21,13 +19,16 @@ document.addEventListener('click', (e) => {
         limpiar();
     }
 
-    if (e.target.classList.contains("btn-primary")) {
+    const botonOperaciones = e.target.closest(".btn-primary");
+    if (botonOperaciones) {
         e.preventDefault();
-        alert("Operaciones");
 
+        const valorOperacion = botonOperaciones.getAttribute('data-valor');
+        alert(valorOperacion);
 
+        inputResultado.value = operaciones(resultadoAnterio, inputResultado.value, valorOperacion);
 
-        //operaciones
+        //operaciones ????
     }
 
 
