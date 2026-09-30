@@ -1,7 +1,7 @@
 const inputResultado = document.getElementById('resultado');
 let resultadoAnterio = 0;
 
-inputResultado.value = 90;
+inputResultado.value = 0;
 
 document.addEventListener('click', (e) => {
 
@@ -9,7 +9,14 @@ document.addEventListener('click', (e) => {
     if (botonNumero) {
         e.preventDefault();
         const valor = botonNumero.getAttribute('data-valor');
+
+        if (resultadoAnterio == inputResultado.value) {
+            limpiar();
+        }
+
         inputResultado.value += valor;
+
+
 
     }
 
@@ -24,10 +31,10 @@ document.addEventListener('click', (e) => {
         e.preventDefault();
 
         const valorOperacion = botonOperaciones.getAttribute('data-valor');
-        alert(valorOperacion);
+        // alert(valorOperacion);
 
-        inputResultado.value = operaciones(resultadoAnterio, inputResultado.value, valorOperacion);
-
+        resultadoAnterio = operaciones(resultadoAnterio, inputResultado.value, valorOperacion);
+        inputResultado.value = resultadoAnterio;
         //operaciones ????
     }
 
