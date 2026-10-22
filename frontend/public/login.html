@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Iniciar Sesión - Mascotas Rescue</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+  <body class="auth-page">
+    <main class="auth-container">
+      <section class="auth-card">
+        <header class="auth-header">
+          <span class="brand-badge">Mascotas Rescue</span>
+          <h1>Iniciar Sesión</h1>
+          <p class="auth-subtitle">Ingresa tu correo y contraseña para continuar.</p>
+        </header>
+
+        <form id="form-login" class="auth-form" action="/login" method="POST">
+          <div class="form-field">
+            <label for="email">Correo electrónico</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="username"
+              spellcheck="false"
+              placeholder="correo@ejemplo.com"
+              required
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="current-password">Contraseña</label>
+            <input
+              type="password"
+              id="current-password"
+              name="password"
+              autocomplete="current-password"
+              placeholder="Contraseña"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn-submit">Ingresar</button>
+        </form>
+
+        <footer class="auth-footer">
+          <p>¿No tienes cuenta?</p>
+          <p>
+            <a href="registro-adoptante.html">Registro Adoptante</a> |
+            <a href="registro-refugio.html">Registro Refugio</a>
+          </p>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>

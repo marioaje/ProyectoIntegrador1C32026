@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Registro de Adoptante - Mascotas Rescue</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+  <body class="auth-page">
+    <main class="auth-container">
+      <section class="auth-card">
+        <header class="auth-header">
+          <span class="brand-badge">Mascotas Rescue</span>
+          <h1>Crear cuenta de Adoptante</h1>
+          <p class="auth-subtitle">Regístrate para adoptar una mascota.</p>
+        </header>
+
+        <form id="form-registro-adoptante" class="auth-form" action="/usuarios" method="POST">
+          <div class="form-field">
+            <label for="nombre">Nombre completo</label>
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              autocomplete="name"
+              placeholder="Nombre y apellidos"
+              required
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="email">Correo electrónico</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="username"
+              spellcheck="false"
+              placeholder="correo@ejemplo.com"
+              required
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="new-password">Contraseña</label>
+            <input
+              type="password"
+              id="new-password"
+              name="password"
+              autocomplete="new-password"
+              minlength="6"
+              placeholder="Contraseña"
+              required
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="telefono">Teléfono</label>
+            <input
+              type="tel"
+              id="telefono"
+              name="telefono"
+              autocomplete="tel"
+              placeholder="8888-8888"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn-submit">Registrarse</button>
+        </form>
+
+        <footer class="auth-footer">
+          <p>¿Eres un refugio? <a href="registro-refugio.html">Regístrate aquí</a></p>
+          <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>

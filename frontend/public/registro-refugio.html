@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Registro de Refugio - Mascotas Rescue</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+  <body class="auth-page">
+    <main class="auth-container">
+      <section class="auth-card">
+        <header class="auth-header">
+          <span class="brand-badge">Mascotas Rescue</span>
+          <h1>Crear cuenta de Refugio</h1>
+          <p class="auth-subtitle">Registra tu refugio para publicar mascotas en adopción.</p>
+        </header>
+
+        <form id="form-registro-refugio" class="auth-form" action="/usuarios" method="POST">
+          <div class="form-field">
+            <label for="nombre-refugio">Nombre del refugio</label>
+            <input
+              type="text"
+              id="nombre-refugio"
+              name="nombre_refugio"
+              autocomplete="organization"
+              placeholder="Nombre del refugio"
+              required
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="email">Correo electrónico</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="username"
+              spellcheck="false"
+              placeholder="contacto@refugio.com"
+              required
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="new-password">Contraseña</label>
+            <input
+              type="password"
+              id="new-password"
+              name="password"
+              autocomplete="new-password"
+              minlength="6"
+              placeholder="Contraseña"
+              required
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="telefono">Teléfono</label>
+            <input
+              type="tel"
+              id="telefono"
+              name="telefono"
+              autocomplete="tel"
+              placeholder="2222-3333"
+              required
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="ubicacion">Ubicación</label>
+            <input
+              type="text"
+              id="ubicacion"
+              name="ubicacion"
+              autocomplete="street-address"
+              placeholder="Provincia, cantón o dirección"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn-submit">Registrar refugio</button>
+        </form>
+
+        <footer class="auth-footer">
+          <p>¿Buscas adoptar? <a href="registro-adoptante.html">Regístrate como adoptante</a></p>
+          <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>
