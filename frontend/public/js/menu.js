@@ -1,13 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
+
     const menu = document.getElementById("menu");
+
     if (!menu) return;
 
-    const currentPage = window.location.pathname.split("/").pop() || "index.html";
-    const isActive = (page) => (currentPage === page ? "active" : "");
-    const ariaCurrent = (page) => (currentPage === page ? 'aria-current="page"' : "");
-
     menu.innerHTML = `
-      <nav class="navbar navbar-expand-sm navbar-light bg-light mb-4 border-bottom">
+      <nav class="navbar navbar-expand-sm navbar-light bg-light">
           <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">Proyecto Integrador</a>
             <button
@@ -38,11 +36,22 @@ document.addEventListener("DOMContentLoaded", function () {
                   >Usuarios</a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link" href="productos.html">Productos</a>
+                </li>                
+                <li class="nav-item dropdown">
                   <a
-                    class="nav-link ${isActive("productos.html")}"
-                    href="productos.html"
-                    ${ariaCurrent("productos.html")}
-                  >Productos</a>
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="dropdownId"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    >Dropdown</a
+                  >
+                  <div class="dropdown-menu" aria-labelledby="dropdownId">
+                    <a class="dropdown-item" href="productos.html">Productos</a>
+                    <a class="dropdown-item" href="#">Action 2</a>
+                  </div>
                 </li>
               </ul>
             </div>
