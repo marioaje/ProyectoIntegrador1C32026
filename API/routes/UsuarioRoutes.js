@@ -106,7 +106,7 @@ router.put('/:id', async (req, res) => {
 
 
 
-//PUT por ID
+//delete por ID
 router.delete('/:id', async (req, res) => {
     try {
         const usuarios = await Usuario.findByIdAndDelete(

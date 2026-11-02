@@ -13,16 +13,138 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   </head>
 
   <body>
     <div class="container">
       <header>
         <div id="menu">aca va el menu</div>
+        <h2>Dashboard usuarios</h2>
       </header>
       <main>
-        <h2>Dashboard usuarios</h2>
+        <div class="container">
+          <!-- Button trigger modal -->
+          <button
+            type="button"
+            class="btn btn-primary btn-lg"
+            data-bs-toggle="modal"
+            data-bs-target="#modalId"
+          >
+            Crear usuario
+          </button>
+
+          <div class="table-responsive">
+            <table class="table table-primary">
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Correo</th>
+                  <th scope="col">Clave</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="tbodyUsuarios"></tbody>
+            </table>
+          </div>
+        </div>
       </main>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="modalId"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="modalTitleId"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalTitleId">Modal Usuario Crear</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form>
+                  <div class="mb-3">
+                    <label for="" class="form-label">Nombre</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="nombre"
+                      id="nombre"
+                      aria-describedby="helpId"
+                      placeholder=""
+                      required
+                    />
+                    <small id="helpId" class="form-text text-body-secondary"
+                      >Help text</small
+                    >
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="" class="form-label">Correo</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="correo"
+                      id="correo"
+                      aria-describedby="helpId"
+                      placeholder=""
+                      required
+                    />
+                    <small id="helpId" class="form-text text-body-secondary"
+                      >Help text Coreo</small
+                    >
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="" class="form-label">Clave</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="clave"
+                      id="clave"
+                      aria-describedby="helpId"
+                      placeholder=""
+                      required
+                    />
+                    <small id="helpId" class="form-text text-body-secondary"
+                      >Help text Clave</small
+                    >
+                  </div>
+
+                  <div>
+                    <button type="reset" class="btn btn-danger">Limpiar</button>
+                    <button type="submit" class="btn btn-primary">
+                      Enviar
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <footer>
         <!-- place footer here -->
       </footer>
@@ -37,5 +159,7 @@
 
     <!-- agregamos un archivo que tenga el menu -->
     <script src="js/menu.js" defer></script>
+
+    <script type="module" src="js/usuarioController.js"></script>
   </body>
 </html>
