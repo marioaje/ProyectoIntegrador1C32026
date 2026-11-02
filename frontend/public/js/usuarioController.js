@@ -228,6 +228,3 @@ function eliminarUsuario() {
 
 
 
-
-
-eliminarUsuario
