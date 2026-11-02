@@ -5,12 +5,22 @@ console.log(API.USUARIOS);
 $(document).ready(function () {
     consultarUsuarios();
 
-
     $("#formUsuarioCrear").submit(function (event) {
         event.preventDefault();
         crearUsuario();
     });
 
+
+    $("#formUsuarioEditar").submit(function (event) {
+        event.preventDefault();
+        editarUsuario();
+    });
+
+
+    $("#formUsuarioEliminar").submit(function (event) {
+        event.preventDefault();
+        eliminarUsuario();
+    });
 });
 
 
@@ -42,8 +52,6 @@ function cargarDatosTabla(response) {
     response.forEach(elementIndividual => {
         // console.log(elementIndividual._id);
         // console.log(elementIndividual);
-
-
         let fila = `
               <tr class="">
                   <td scope="row">${elementIndividual._id}</td>
@@ -57,6 +65,7 @@ function cargarDatosTabla(response) {
                         class="btn btn-success"
                         href="#"
                         role="button"
+                        onclick="cargarEditarUsuario('${elementIndividual._id}')"
                         >Editar</a
                     >
                   
@@ -66,6 +75,7 @@ function cargarDatosTabla(response) {
                         class="btn btn-danger"
                         href="#"
                         role="button"
+                        onclick="cargarEliminarUsuario('${elementIndividual._id}')"
                         >Eliminar</a
                   >
                   
@@ -102,7 +112,7 @@ function crearUsuario() {
         contentType: "application/json",
         success: function (response) {
             consultarUsuarios();
-
+            $("#formUsuarioCrear")[0].reset();
         }
     });
 
@@ -110,3 +120,114 @@ function crearUsuario() {
     alert("Usuario creado correctamente");
 
 }
+
+
+window.cargarEditarUsuario = function (identificadorUsuario) {
+
+    // console.log("cargarEditarUsuario", identificadorUsuario);
+
+    const url = `${API.USUARIOS}/${identificadorUsuario}`;
+    console.log("cargarEditarUsuario", url);
+
+    $.ajax({
+        type: "GET",
+        url: url,
+        dataType: "json",
+        success: function (response) {
+            cargarDatosInputEditar(response)
+        }
+    });
+
+
+
+    const modalEditar = new bootstrap.Modal($("#modalEditar")[0]);
+    modalEditar.show();
+}
+
+
+
+
+window.cargarEliminarUsuario = function (identificadorUsuario) {
+    $("#idEliminar").val(identificadorUsuario);
+
+
+    const modalEliminar = new bootstrap.Modal($("#modalEliminar")[0]);
+    modalEliminar.show();
+}
+
+
+
+function cargarDatosInputEditar(response) {
+
+    $("#idEditar").val(response._id);
+    $("#nombreEditar").val(response.nombre);
+    $("#correoEditar").val(response.correo);
+    $("#claveEditar").val(response.clave);
+
+}
+
+
+
+function editarUsuario() {
+    const identificadorUsuario = $("#idEditar").val();
+    const nombre = $("#nombreEditar").val();
+    const correo = $("#correoEditar").val();
+    const clave = $("#claveEditar").val();
+
+    const url = `${API.USUARIOS}/${identificadorUsuario}`;
+
+    const objetoUsuario = {
+
+        nombre,
+        correo,
+        clave
+    }
+
+    $.ajax({
+        type: "PUT",
+        url: url,
+        data: JSON.stringify(objetoUsuario),
+        dataType: "json",
+        contentType: "application/json",
+        success: function (response) {
+            consultarUsuarios();
+            $("#formUsuarioEditar")[0].reset();
+            bootstrap.Modal.getInstance($("#modalEditar")[0]).hide();
+        }
+    });
+
+
+    alert("Usuario actualizado correctamente");
+}
+
+
+
+function eliminarUsuario() {
+    const identificadorUsuario = $("#idEliminar").val();
+
+
+    const url = `${API.USUARIOS}/${identificadorUsuario}`;
+
+
+    $.ajax({
+        type: "DELETE",
+        url: url,
+        dataType: "json",
+        contentType: "application/json",
+        success: function (response) {
+            consultarUsuarios();
+            $("#formUsuarioEliminar")[0].reset();
+            bootstrap.Modal.getInstance($("#modalEliminar")[0]).hide();
+        }
+    });
+
+
+    alert("Usuario eliminado correctamente");
+}
+
+
+
+
+
+
+eliminarUsuario
