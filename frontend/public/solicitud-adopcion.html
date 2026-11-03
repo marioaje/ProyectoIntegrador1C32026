@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Solicitud de Adopción - Mascotas Rescue</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+  <body>
+    <header class="site-navbar">
+      <div class="nav-container">
+        <a href="catalogo.html" class="nav-brand">Mascotas<span>Rescue</span></a>
+        <nav class="nav-links">
+          <a href="catalogo.html">Catálogo</a>
+          <a href="favoritos.html">Favoritos</a>
+          <a href="solicitud-adopcion.html" class="active">Adoptar</a>
+          <a href="perfil-adoptante.html">Mi Perfil</a>
+        </nav>
+        <div class="nav-actions">
+          <a href="perfil-adoptante.html" class="btn btn-outline btn-sm">Mi Cuenta</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="container section-space">
+      <section class="card form-panel">
+        <div class="card-header">
+          <span class="badge badge-accent">Formulario Oficial</span>
+          <h1>Solicitud de Adopción Responsable</h1>
+          <p>Cuéntanos sobre tu hogar y estilo de vida para asegurar el bienestar de tu futura mascota.</p>
+        </div>
+
+        <form id="form-solicitud-adopcion" class="form-stack" action="/solicitudes" method="POST">
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="mascota">Mascota que deseas adoptar</label>
+              <select id="mascota" name="mascota" required>
+                <option value="">Selecciona una mascota</option>
+                <option value="bruno" selected>Bruno (Perro · 2 años)</option>
+                <option value="luna">Luna (Gato · 1 año)</option>
+                <option value="rocky">Rocky (Perro · 3 años)</option>
+                <option value="milo">Milo (Gato · 8 meses)</option>
+                <option value="canela">Canela (Perro · 6 meses)</option>
+                <option value="nala">Nala (Gato · 2 años)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="tipo_vivienda">Tipo de vivienda</label>
+              <select id="tipo_vivienda" name="tipo_vivienda" required>
+                <option value="">Selecciona una opción</option>
+                <option value="casa_patio">Casa con patio cerrado</option>
+                <option value="casa_sin_patio">Casa sin patio</option>
+                <option value="apartamento">Apartamento</option>
+                <option value="finca">Quinta o terreno amplio</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="experiencia_previa">Experiencia previa con mascotas</label>
+            <textarea
+              id="experiencia_previa"
+              name="experiencia_previa"
+              rows="3"
+              placeholder="¿Has tenido mascotas antes? ¿Convives actualmente con otros animales en casa?"
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="motivo_adopcion">Motivo de adopción</label>
+            <textarea
+              id="motivo_adopcion"
+              name="motivo_adopcion"
+              rows="4"
+              placeholder="Cuéntanos por qué deseas adoptar a esta mascota y cuánto tiempo diario podrás dedicarle..."
+              required
+            ></textarea>
+          </div>
+
+          <label class="checkbox-card" for="compromiso_cuidado">
+            <input
+              type="checkbox"
+              id="compromiso_cuidado"
+              name="compromiso_cuidado"
+              value="acepto"
+              required
+            />
+            <span>
+              Me comprometo formalmente a brindar alimentación adecuada, atención veterinaria periódica, un entorno seguro y nunca abandonar a la mascota adoptada.
+            </span>
+          </label>
+
+          <div class="form-actions-inline">
+            <a href="catalogo.html" class="btn btn-outline">Cancelar</a>
+            <button type="submit" class="btn btn-primary">Enviar Solicitud de Adopción</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
+

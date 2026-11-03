@@ -6,55 +6,71 @@
     <title>Registro de Adoptante - Mascotas Rescue</title>
     <link rel="stylesheet" href="css/estilos.css" />
   </head>
-  <body class="auth-page">
-    <main class="auth-container">
-      <section class="auth-card">
-        <header class="auth-header">
-          <span class="brand-badge">Mascotas Rescue</span>
-          <h1>Crear cuenta de Adoptante</h1>
-          <p class="auth-subtitle">Regístrate para adoptar una mascota.</p>
-        </header>
+  <body>
+    <header class="site-navbar">
+      <div class="nav-container">
+        <a href="catalogo.html" class="nav-brand">Mascotas<span>Rescue</span></a>
+        <nav class="nav-links">
+          <a href="catalogo.html">Catálogo</a>
+          <a href="favoritos.html">Favoritos</a>
+          <a href="solicitud-adopcion.html">Adoptar</a>
+          <a href="perfil-adoptante.html">Mi Perfil</a>
+        </nav>
+        <div class="nav-actions">
+          <a href="login.html" class="btn btn-outline btn-sm">Ingresar</a>
+          <a href="registro-adoptante.html" class="btn btn-primary btn-sm active">Registrarse</a>
+        </div>
+      </div>
+    </header>
 
-        <form id="form-registro-adoptante" class="auth-form" action="/usuarios" method="POST">
-          <div class="form-field">
+    <main class="auth-wrapper">
+      <section class="card auth-card">
+        <div class="card-header">
+          <span class="badge badge-accent">Únete a la Comunidad</span>
+          <h1>Crear cuenta de Adoptante</h1>
+          <p>Completa tus datos para postularte en la adopción responsable de una mascota.</p>
+        </div>
+
+        <form id="form-registro-adoptante" class="form-stack" action="/usuarios" method="POST">
+          <div class="form-group">
             <label for="nombre">Nombre completo</label>
             <input
               type="text"
               id="nombre"
               name="nombre"
               autocomplete="name"
-              placeholder="Nombre y apellidos"
+              placeholder="Ej. Valeria Morales"
               required
             />
           </div>
 
-          <div class="form-field">
-            <label for="email">Correo electrónico</label>
+          <div class="form-group">
+            <label for="correo">Correo electrónico</label>
             <input
               type="email"
-              id="email"
-              name="email"
+              id="correo"
+              name="correo"
               autocomplete="username"
               spellcheck="false"
-              placeholder="correo@ejemplo.com"
+              placeholder="valeria@correo.com"
               required
             />
           </div>
 
-          <div class="form-field">
-            <label for="new-password">Contraseña</label>
+          <div class="form-group">
+            <label for="clave">Contraseña</label>
             <input
               type="password"
-              id="new-password"
-              name="password"
+              id="clave"
+              name="clave"
               autocomplete="new-password"
               minlength="6"
-              placeholder="Contraseña"
+              placeholder="Mínimo 6 caracteres"
               required
             />
           </div>
 
-          <div class="form-field">
+          <div class="form-group">
             <label for="telefono">Teléfono</label>
             <input
               type="tel"
@@ -66,13 +82,12 @@
             />
           </div>
 
-          <button type="submit" class="btn-submit">Registrarse</button>
+          <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
         </form>
 
-        <footer class="auth-footer">
-          <p>¿Eres un refugio? <a href="registro-refugio.html">Regístrate aquí</a></p>
-          <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
-        </footer>
+        <div class="card-footer">
+          <p>¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+        </div>
       </section>
     </main>
   </body>

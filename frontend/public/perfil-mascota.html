@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Perfil de Mascota - Mascotas Rescue</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+  <body>
+    <header class="site-navbar">
+      <div class="nav-container">
+        <a href="catalogo.html" class="nav-brand">Mascotas<span>Rescue</span></a>
+        <nav class="nav-links">
+          <a href="catalogo.html">Catálogo</a>
+          <a href="favoritos.html">Favoritos</a>
+          <a href="solicitud-adopcion.html">Adoptar</a>
+          <a href="perfil-adoptante.html">Mi Perfil</a>
+        </nav>
+        <div class="nav-actions">
+          <a href="login.html" class="btn btn-outline btn-sm">Ingresar</a>
+          <a href="registro-adoptante.html" class="btn btn-primary btn-sm">Registrarse</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="container section-space">
+      <div class="detail-grid">
+        <section class="card viewer-card">
+          <div class="viewer-header">
+            <span class="badge badge-emerald">Visor 3D Interactivo</span>
+            <span class="viewer-controls-hint">Arrastra para rotar · Rueda para zoom</span>
+          </div>
+          <div id="contenedor-modelo-3d" class="viewer-stage">
+            <div class="viewer-placeholder">
+              <div class="viewer-cube">3D</div>
+              <h3>Modelo 3D de Bruno (bruno_mesh.glb)</h3>
+              <p>Espacio preparado para renderizado interactivo WebGL / Three.js / model-viewer</p>
+            </div>
+          </div>
+          <div class="audio-bar">
+            <div class="audio-info">
+              <strong>Sonido real de la mascota</strong>
+              <span>Clip de audio verificado por el administrador</span>
+            </div>
+            <button type="button" id="btn-audio-mascota" class="btn btn-secondary">
+              ▶ Escuchar ladrido / maullido
+            </button>
+          </div>
+        </section>
+
+        <section class="card detail-info-card">
+          <div class="detail-top">
+            <span class="pet-status status-available">Disponible para adopción</span>
+            <button type="button" class="btn-fav-inline" aria-label="Guardar en favoritos">♥ Guardar</button>
+          </div>
+
+          <h1>Bruno</h1>
+          <p class="detail-subtitle">Mestizo Golden · Macho · 2 años</p>
+
+          <div class="specs-grid">
+            <div class="spec-box">
+              <span class="spec-label">Especie</span>
+              <strong class="spec-value">Perro</strong>
+            </div>
+            <div class="spec-box">
+              <span class="spec-label">Tamaño</span>
+              <strong class="spec-value">Mediano (18 kg)</strong>
+            </div>
+            <div class="spec-box">
+              <span class="spec-label">Salud</span>
+              <strong class="spec-value">Vacunado y castrado</strong>
+            </div>
+            <div class="spec-box">
+              <span class="spec-label">Convivencia</span>
+              <strong class="spec-value">Apto con niños y perros</strong>
+            </div>
+          </div>
+
+          <div class="story-block">
+            <h2>Su Historia y Personalidad</h2>
+            <p>
+              Bruno fue rescatado hace tres meses y desde el primer día demostró un temperamento noble y equilibrado. Le encanta salir a caminar por las mañanas, aprender juegos nuevos y descansar cerca de su familia.
+            </p>
+            <p>
+              Tiene todas sus vacunas al día, desparasitación completa y control veterinario certificado. Busca una familia comprometida que le brinde tiempo, paseos diarios y mucho afecto.
+            </p>
+          </div>
+
+          <div class="detail-cta">
+            <a href="solicitud-adopcion.html" class="btn btn-primary btn-block">Solicitar Adopción</a>
+            <a href="catalogo.html" class="btn btn-outline btn-block">Volver al catálogo</a>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
+

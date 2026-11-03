@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Catálogo Inmersivo - Mascotas Rescue</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+  <body>
+    <header class="site-navbar">
+      <div class="nav-container">
+        <a href="catalogo.html" class="nav-brand">Mascotas<span>Rescue</span></a>
+        <nav class="nav-links">
+          <a href="catalogo.html" class="active">Catálogo</a>
+          <a href="favoritos.html">Favoritos</a>
+          <a href="solicitud-adopcion.html">Adoptar</a>
+          <a href="perfil-adoptante.html">Mi Perfil</a>
+        </nav>
+        <div class="nav-actions">
+          <a href="login.html" class="btn btn-outline btn-sm">Ingresar</a>
+          <a href="registro-adoptante.html" class="btn btn-primary btn-sm">Registrarse</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero-banner">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="badge badge-accent">Experiencia de Adopción 3D &amp; Audio</span>
+          <h1>Conoce a tu próximo mejor amigo de forma interactiva</h1>
+          <p>
+            Explora nuestro catálogo inmersivo. Visualiza a cada mascota en 3D, escucha su voz real y dale una segunda oportunidad en un hogar lleno de amor.
+          </p>
+          <div class="hero-buttons">
+            <a href="#explorar" class="btn btn-primary">Explorar Mascotas</a>
+            <a href="solicitud-adopcion.html" class="btn btn-secondary">Solicitar Adopción</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-highlight-card">
+            <img
+              src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80"
+              alt="Perro en adopción"
+            />
+            <div class="hero-card-overlay">
+              <span class="badge badge-emerald">Modelo 3D Disponible</span>
+              <h3>Max · Golden Mestizo</h3>
+              <p>2 años · Juguetón y cariñoso</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main id="explorar" class="container section-space">
+      <section class="filter-bar card">
+        <form class="filter-form" action="catalogo.html" method="GET">
+          <div class="form-group">
+            <label for="filtro-especie">Especie</label>
+            <select id="filtro-especie" name="especie">
+              <option value="">Todas las especies</option>
+              <option value="perro">Perros</option>
+              <option value="gato">Gatos</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="filtro-tamano">Tamaño</label>
+            <select id="filtro-tamano" name="tamano">
+              <option value="">Cualquier tamaño</option>
+              <option value="pequeno">Pequeño</option>
+              <option value="mediano">Mediano</option>
+              <option value="grande">Grande</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="filtro-edad">Edad</label>
+            <select id="filtro-edad" name="edad">
+              <option value="">Todas las edades</option>
+              <option value="cachorro">Cachorro (0 - 1 año)</option>
+              <option value="joven">Joven (1 - 3 años)</option>
+              <option value="adulto">Adulto (3+ años)</option>
+            </select>
+          </div>
+
+          <div class="filter-action">
+            <button type="submit" class="btn btn-primary btn-block">Filtrar resultados</button>
+          </div>
+        </form>
+      </section>
+
+      <div class="section-heading">
+        <div>
+          <h2>Mascotas esperando un hogar</h2>
+          <p>Cada ficha incluye visualización interactiva 3D y audio real.</p>
+        </div>
+        <span class="badge badge-neutral">6 mascotas disponibles</span>
+      </div>
+
+      <section class="pet-grid">
+        <article class="pet-card">
+          <div class="pet-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=700&q=80"
+              alt="Bruno"
+            />
+            <span class="pet-status status-available">Disponible</span>
+            <button type="button" class="btn-fav" aria-label="Guardar en favoritos">♥</button>
+          </div>
+          <div class="pet-card-body">
+            <div class="pet-meta">
+              <span>Perro</span>
+              <span>•</span>
+              <span>Mediano</span>
+              <span>•</span>
+              <span>2 años</span>
+            </div>
+            <h3>Bruno</h3>
+            <p>Noble, activo y vacunado al día. Ideal para familias con patio o paseos diarios.</p>
+            <div class="pet-card-actions">
+              <a href="perfil-mascota.html" class="btn btn-primary btn-block">Ver perfil 3D</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pet-card">
+          <div class="pet-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=700&q=80"
+              alt="Luna"
+            />
+            <span class="pet-status status-available">Disponible</span>
+            <button type="button" class="btn-fav" aria-label="Guardar en favoritos">♥</button>
+          </div>
+          <div class="pet-card-body">
+            <div class="pet-meta">
+              <span>Gato</span>
+              <span>•</span>
+              <span>Pequeño</span>
+              <span>•</span>
+              <span>1 año</span>
+            </div>
+            <h3>Luna</h3>
+            <p>Tranquila, curiosa y muy afectuosa. Se adapta perfectamente a apartamentos.</p>
+            <div class="pet-card-actions">
+              <a href="perfil-mascota.html" class="btn btn-primary btn-block">Ver perfil 3D</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pet-card">
+          <div class="pet-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=700&q=80"
+              alt="Rocky"
+            />
+            <span class="pet-status status-process">En Proceso</span>
+            <button type="button" class="btn-fav" aria-label="Guardar en favoritos">♥</button>
+          </div>
+          <div class="pet-card-body">
+            <div class="pet-meta">
+              <span>Perro</span>
+              <span>•</span>
+              <span>Grande</span>
+              <span>•</span>
+              <span>3 años</span>
+            </div>
+            <h3>Rocky</h3>
+            <p>Leal, sociable con otros perros y entrenado en comandos básicos de convivencia.</p>
+            <div class="pet-card-actions">
+              <a href="perfil-mascota.html" class="btn btn-primary btn-block">Ver perfil 3D</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pet-card">
+          <div class="pet-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=700&q=80"
+              alt="Milo"
+            />
+            <span class="pet-status status-available">Disponible</span>
+            <button type="button" class="btn-fav" aria-label="Guardar en favoritos">♥</button>
+          </div>
+          <div class="pet-card-body">
+            <div class="pet-meta">
+              <span>Gato</span>
+              <span>•</span>
+              <span>Mediano</span>
+              <span>•</span>
+              <span>8 meses</span>
+            </div>
+            <h3>Milo</h3>
+            <p>Juguetón, esterilizado y desparasitado. Le encanta explorar y ronronear.</p>
+            <div class="pet-card-actions">
+              <a href="perfil-mascota.html" class="btn btn-primary btn-block">Ver perfil 3D</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pet-card">
+          <div class="pet-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=700&q=80"
+              alt="Canela"
+            />
+            <span class="pet-status status-available">Disponible</span>
+            <button type="button" class="btn-fav" aria-label="Guardar en favoritos">♥</button>
+          </div>
+          <div class="pet-card-body">
+            <div class="pet-meta">
+              <span>Perro</span>
+              <span>•</span>
+              <span>Pequeño</span>
+              <span>•</span>
+              <span>6 meses</span>
+            </div>
+            <h3>Canela</h3>
+            <p>Cachorra llena de energía, muy sociable con niños y lista para crecer en familia.</p>
+            <div class="pet-card-actions">
+              <a href="perfil-mascota.html" class="btn btn-primary btn-block">Ver perfil 3D</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pet-card">
+          <div class="pet-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=700&q=80"
+              alt="Nala"
+            />
+            <span class="pet-status status-available">Disponible</span>
+            <button type="button" class="btn-fav" aria-label="Guardar en favoritos">♥</button>
+          </div>
+          <div class="pet-card-body">
+            <div class="pet-meta">
+              <span>Gato</span>
+              <span>•</span>
+              <span>Pequeño</span>
+              <span>•</span>
+              <span>2 años</span>
+            </div>
+            <h3>Nala</h3>
+            <p>Dulce, silenciosa y muy cariñosa. Busca un hogar sereno donde recibir mimos.</p>
+            <div class="pet-card-actions">
+              <a href="perfil-mascota.html" class="btn btn-primary btn-block">Ver perfil 3D</a>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
+

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Recuperar Contraseña - Mascotas Rescue</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+  <body>
+    <header class="site-navbar">
+      <div class="nav-container">
+        <a href="catalogo.html" class="nav-brand">Mascotas<span>Rescue</span></a>
+        <nav class="nav-links">
+          <a href="catalogo.html">Catálogo</a>
+          <a href="favoritos.html">Favoritos</a>
+          <a href="solicitud-adopcion.html">Adoptar</a>
+          <a href="perfil-adoptante.html">Mi Perfil</a>
+        </nav>
+        <div class="nav-actions">
+          <a href="login.html" class="btn btn-outline btn-sm">Ingresar</a>
+          <a href="registro-adoptante.html" class="btn btn-primary btn-sm">Registrarse</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="auth-wrapper">
+      <section class="card auth-card">
+        <div class="card-header">
+          <span class="badge badge-emerald">Seguridad</span>
+          <h1>Recuperar Contraseña</h1>
+          <p>Ingresa tu correo registrado y te enviaremos las instrucciones para restablecer tu clave.</p>
+        </div>
+
+        <form id="form-recuperar" class="form-stack" action="/recuperar-clave" method="POST">
+          <div class="form-group">
+            <label for="correo">Correo electrónico</label>
+            <input
+              type="email"
+              id="correo"
+              name="correo"
+              autocomplete="email"
+              spellcheck="false"
+              placeholder="nombre@correo.com"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Enviar enlace de recuperación</button>
+        </form>
+
+        <div class="card-footer">
+          <p>¿Recordaste tu contraseña? <a href="login.html">Volver al inicio de sesión</a></p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+
