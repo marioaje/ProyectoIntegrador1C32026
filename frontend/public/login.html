@@ -3,70 +3,209 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Iniciar Sesión - Mascotas Rescue</title>
+    <title>Iniciar Sesión / Mascotas Rescue</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/estilos.css" />
   </head>
   <body>
-    <header class="site-navbar">
-      <div class="nav-container">
-        <a href="catalogo.html" class="nav-brand">Mascotas<span>Rescue</span></a>
-        <nav class="nav-links">
-          <a href="catalogo.html">Catálogo</a>
-          <a href="favoritos.html">Favoritos</a>
-          <a href="solicitud-adopcion.html">Adoptar</a>
-          <a href="perfil-adoptante.html">Mi Perfil</a>
-        </nav>
-        <div class="nav-actions">
-          <a href="login.html" class="btn btn-outline btn-sm active">Ingresar</a>
-          <a href="registro-adoptante.html" class="btn btn-primary btn-sm">Registrarse</a>
+    <div id="loading-overlay" class="loading-overlay">
+      <div class="spinner-cluster">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-border text-secondary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-border text-success" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-border text-danger" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-border text-warning" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-border text-info" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-border text-light" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-border text-dark" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </div>
+
+    <header class="animalia-navbar">
+      <div class="container-fluid d-flex align-items-center justify-content-between px-3">
+        <button
+          class="btn btn-menu-toggle d-lg-none"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#menuLateral"
+          aria-controls="menuLateral"
+          aria-label="Abrir menú"
+        >
+          <i class="bi bi-list fs-3"></i>
+        </button>
+        <a href="catalogo.html" class="brand-script">Animalia / Mascotas Rescue</a>
+        <div class="navbar-status-icon">
+          <i class="bi bi-shield-check"></i>
         </div>
       </div>
     </header>
 
-    <main class="auth-wrapper">
-      <section class="card auth-card">
-        <div class="card-header">
-          <span class="badge badge-accent">Acceso Adoptantes</span>
-          <h1>Bienvenido de nuevo</h1>
-          <p>Ingresa tus credenciales para gestionar tus adopciones y favoritos.</p>
+    <div class="app-layout">
+      <aside
+        class="offcanvas-lg offcanvas-start animalia-sidebar"
+        tabindex="-1"
+        id="menuLateral"
+        aria-labelledby="menuLateralLabel"
+      >
+        <div class="offcanvas-header d-lg-none border-bottom">
+          <span class="brand-script fs-4 text-dark" id="menuLateralLabel">Animalia</span>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            data-bs-target="#menuLateral"
+            aria-label="Cerrar"
+          ></button>
         </div>
 
-        <form id="form-login" class="form-stack" action="/login" method="POST">
-          <div class="form-group">
-            <label for="correo">Correo electrónico</label>
-            <input
-              type="email"
-              id="correo"
-              name="correo"
-              autocomplete="username"
-              spellcheck="false"
-              placeholder="nombre@correo.com"
-              required
-            />
-          </div>
-
-          <div class="form-group">
-            <div class="label-split">
-              <label for="clave">Contraseña</label>
-              <a href="recuperar-clave.html" class="link-subtle">¿Olvidaste tu contraseña?</a>
+        <div class="sidebar-inner">
+          <div class="sidebar-user-box">
+            <div class="avatar-placeholder">
+              <i class="bi bi-person-circle"></i>
             </div>
-            <input
-              type="password"
-              id="clave"
-              name="clave"
-              autocomplete="current-password"
-              placeholder="••••••••"
-              required
-            />
+            <span class="user-role-text">Adoptante / Invitado</span>
+            <div class="pet-silhouettes">
+              <i class="bi bi-heart-pulse"></i>
+              <i class="bi bi-house-heart"></i>
+              <i class="bi bi-stars"></i>
+            </div>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
-        </form>
+          <nav class="sidebar-nav">
+            <a href="catalogo.html" class="nav-link-item">
+              <i class="bi bi-search"></i> Filtrar Búsqueda / Catálogo
+            </a>
+            <a href="perfil-adoptante.html" class="nav-link-item">
+              <i class="bi bi-person-vcard"></i> Mi Perfil
+            </a>
+            <a href="registro-adoptante.html" class="nav-link-item">
+              <i class="bi bi-person-plus"></i> Registro Adoptante
+            </a>
+            <a href="login.html" class="nav-link-item active">
+              <i class="bi bi-box-arrow-in-right"></i> Cerrar Sesión
+            </a>
+          </nav>
 
-        <div class="card-footer">
-          <p>¿Aún no tienes una cuenta? <a href="registro-adoptante.html">Crear cuenta de adoptante</a></p>
+          <div class="sidebar-social">
+            <span>Síguenos</span>
+            <div class="social-icons">
+              <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            </div>
+          </div>
         </div>
-      </section>
-    </main>
+      </aside>
+
+      <main class="main-area d-flex align-items-center justify-content-center">
+        <section class="animalia-login-card">
+          <div class="login-brand-box text-center">
+            <svg
+              class="animalia-svg-logo"
+              viewBox="0 0 120 120"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <circle cx="60" cy="60" r="54" stroke="#FFFFFF" stroke-width="3" stroke-dasharray="6 4" />
+              <ellipse cx="60" cy="72" rx="18" ry="15" fill="#FFFFFF" />
+              <circle cx="38" cy="50" r="8" fill="#FFFFFF" />
+              <circle cx="52" cy="40" r="8" fill="#FFFFFF" />
+              <circle cx="68" cy="40" r="8" fill="#FFFFFF" />
+              <circle cx="82" cy="50" r="8" fill="#FFFFFF" />
+            </svg>
+            <h1 class="brand-script text-white mt-2 mb-1">Animalia</h1>
+            <p class="text-white-50 small mb-4">Plataforma de Adopción de Mascotas</p>
+          </div>
+
+          <form id="form-login" class="animalia-form" action="/login" method="POST">
+            <div class="mb-3">
+              <label for="correo" class="form-label text-white">Correo electrónico</label>
+              <input
+                type="email"
+                class="form-control animalia-input"
+                id="correo"
+                name="correo"
+                autocomplete="username"
+                spellcheck="false"
+                placeholder="Ingresa tu correo"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="clave" class="form-label text-white">Contraseña</label>
+              <input
+                type="password"
+                class="form-control animalia-input"
+                id="clave"
+                name="clave"
+                autocomplete="current-password"
+                placeholder="Ingresa tu contraseña"
+                required
+              />
+            </div>
+
+            <div class="text-end mb-3">
+              <a href="recuperar-clave.html" class="link-light small text-decoration-underline">
+                ¿Olvidaste tu contraseña?
+              </a>
+            </div>
+
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-animalia-green">Ingresar</button>
+              <a href="registro-adoptante.html" class="btn btn-animalia-outline-light">
+                Crear cuenta de Adoptante
+              </a>
+            </div>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const overlay = document.getElementById('loading-overlay');
+      document.querySelectorAll('a[href]:not([href="#"])').forEach((link) => {
+        link.addEventListener('click', (e) => {
+          const destino = link.getAttribute('href');
+          if (destino) {
+            e.preventDefault();
+            overlay.classList.add('active');
+            setTimeout(() => {
+              window.location.href = destino;
+            }, 350);
+          }
+        });
+      });
+      document.querySelectorAll('form').forEach((form) => {
+        form.addEventListener('submit', () => {
+          overlay.classList.add('active');
+        });
+      });
+    </script>
   </body>
 </html>

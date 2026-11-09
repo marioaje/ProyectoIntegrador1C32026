@@ -3,253 +3,243 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Catálogo Inmersivo - Mascotas Rescue</title>
+    <title>Catálogo / Mascotas Rescue</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/estilos.css" />
   </head>
   <body>
-    <header class="site-navbar">
-      <div class="nav-container">
-        <a href="catalogo.html" class="nav-brand">Mascotas<span>Rescue</span></a>
-        <nav class="nav-links">
-          <a href="catalogo.html" class="active">Catálogo</a>
-          <a href="favoritos.html">Favoritos</a>
-          <a href="solicitud-adopcion.html">Adoptar</a>
-          <a href="perfil-adoptante.html">Mi Perfil</a>
-        </nav>
-        <div class="nav-actions">
-          <a href="login.html" class="btn btn-outline btn-sm">Ingresar</a>
-          <a href="registro-adoptante.html" class="btn btn-primary btn-sm">Registrarse</a>
+    <div id="loading-overlay" class="loading-overlay">
+      <div class="spinner-cluster">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-border text-secondary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-border text-success" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-border text-danger" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-border text-warning" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-border text-info" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-border text-light" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-border text-dark" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </div>
+
+    <header class="animalia-navbar">
+      <div class="container-fluid d-flex align-items-center justify-content-between px-3">
+        <button
+          class="btn btn-menu-toggle d-lg-none"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#menuLateral"
+          aria-controls="menuLateral"
+          aria-label="Abrir menú"
+        >
+          <i class="bi bi-list fs-3"></i>
+        </button>
+        <a href="catalogo.html" class="brand-script">Animalia / Mascotas Rescue</a>
+        <div class="navbar-status-icon">
+          <i class="bi bi-sliders"></i>
         </div>
       </div>
     </header>
 
-    <section class="hero-banner">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <span class="badge badge-accent">Experiencia de Adopción 3D &amp; Audio</span>
-          <h1>Conoce a tu próximo mejor amigo de forma interactiva</h1>
-          <p>
-            Explora nuestro catálogo inmersivo. Visualiza a cada mascota en 3D, escucha su voz real y dale una segunda oportunidad en un hogar lleno de amor.
-          </p>
-          <div class="hero-buttons">
-            <a href="#explorar" class="btn btn-primary">Explorar Mascotas</a>
-            <a href="solicitud-adopcion.html" class="btn btn-secondary">Solicitar Adopción</a>
+    <div class="app-layout">
+      <aside
+        class="offcanvas-lg offcanvas-start animalia-sidebar"
+        tabindex="-1"
+        id="menuLateral"
+        aria-labelledby="menuLateralLabel"
+      >
+        <div class="offcanvas-header d-lg-none border-bottom">
+          <span class="brand-script fs-4 text-dark" id="menuLateralLabel">Animalia</span>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            data-bs-target="#menuLateral"
+            aria-label="Cerrar"
+          ></button>
+        </div>
+
+        <div class="sidebar-inner">
+          <div class="sidebar-user-box">
+            <div class="avatar-placeholder">
+              <i class="bi bi-person-circle"></i>
+            </div>
+            <span class="user-role-text">Adoptante / Invitado</span>
+            <div class="pet-silhouettes">
+              <i class="bi bi-heart-pulse"></i>
+              <i class="bi bi-house-heart"></i>
+              <i class="bi bi-stars"></i>
+            </div>
+          </div>
+
+          <nav class="sidebar-nav">
+            <a href="catalogo.html" class="nav-link-item active">
+              <i class="bi bi-search"></i> Filtrar Búsqueda / Catálogo
+            </a>
+            <a href="perfil-adoptante.html" class="nav-link-item">
+              <i class="bi bi-person-vcard"></i> Mi Perfil
+            </a>
+            <a href="registro-adoptante.html" class="nav-link-item">
+              <i class="bi bi-person-plus"></i> Registro Adoptante
+            </a>
+            <a href="login.html" class="nav-link-item">
+              <i class="bi bi-box-arrow-in-right"></i> Cerrar Sesión
+            </a>
+          </nav>
+
+          <div class="sidebar-social">
+            <span>Síguenos</span>
+            <div class="social-icons">
+              <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            </div>
           </div>
         </div>
-        <div class="hero-visual">
-          <div class="hero-highlight-card">
-            <img
-              src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80"
-              alt="Perro en adopción"
-            />
-            <div class="hero-card-overlay">
-              <span class="badge badge-emerald">Modelo 3D Disponible</span>
-              <h3>Max · Golden Mestizo</h3>
-              <p>2 años · Juguetón y cariñoso</p>
+      </aside>
+
+      <main class="main-area">
+        <div class="container-fluid py-3">
+          <div class="empty-catalog-banner mb-4">
+            <div class="d-flex align-items-center gap-3">
+              <div class="empty-banner-icon">
+                <i class="bi bi-inbox"></i>
+              </div>
+              <div>
+                <h1 class="h5 mb-1 fw-bold">Catálogo listo para recibir registros</h1>
+                <p class="mb-0 text-secondary small">
+                  Aún no se han cargado mascotas. 
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-12 col-md-6 col-xl-4">
+              <article class="animalia-pet-card">
+                <div class="media-placeholder-box">
+                  <i class="bi bi-box"></i>
+                  <span>Espacio reservado para Modelo 3D / Multimedia</span>
+                </div>
+
+                <div class="pet-sheet-body">
+                  <div class="gender-symbol" aria-label="Símbolo de género">♂ / ♀</div>
+
+                  <ul class="pet-sheet-lines">
+                    <li><span>Nombre:</span> <strong>—</strong></li>
+                    <li><span>Edad:</span> <strong>—</strong></li>
+                    <li><span>Raza:</span> <strong>—</strong></li>
+                    <li><span>Tamaño:</span> <strong>—</strong></li>
+                    <li><span>Protectora:</span> <strong>—</strong></li>
+                  </ul>
+
+                  <div class="paw-watermark" aria-hidden="true">
+                    <span class="paw-icon">🐾</span>
+                    <span class="paw-icon">🐾</span>
+                  </div>
+                </div>
+
+                <div class="pet-card-green-bar"></div>
+              </article>
+            </div>
+
+            <div class="col-12 col-md-6 col-xl-4">
+              <article class="animalia-pet-card">
+                <div class="media-placeholder-box">
+                  <i class="bi bi-box"></i>
+                  <span>Espacio reservado para Modelo 3D / Multimedia</span>
+                </div>
+
+                <div class="pet-sheet-body">
+                  <div class="gender-symbol" aria-label="Símbolo de género">♂ / ♀</div>
+
+                  <ul class="pet-sheet-lines">
+                    <li><span>Nombre:</span> <strong>—</strong></li>
+                    <li><span>Edad:</span> <strong>—</strong></li>
+                    <li><span>Raza:</span> <strong>—</strong></li>
+                    <li><span>Tamaño:</span> <strong>—</strong></li>
+                    <li><span>Protectora:</span> <strong>—</strong></li>
+                  </ul>
+
+                  <div class="paw-watermark" aria-hidden="true">
+                    <span class="paw-icon">🐾</span>
+                    <span class="paw-icon">🐾</span>
+                  </div>
+                </div>
+
+                <div class="pet-card-green-bar"></div>
+              </article>
+            </div>
+
+            <div class="col-12 col-md-6 col-xl-4">
+              <article class="animalia-pet-card">
+                <div class="media-placeholder-box">
+                  <i class="bi bi-box"></i>
+                  <span>Espacio reservado para Modelo 3D / Multimedia</span>
+                </div>
+
+                <div class="pet-sheet-body">
+                  <div class="gender-symbol" aria-label="Símbolo de género">♂ / ♀</div>
+
+                  <ul class="pet-sheet-lines">
+                    <li><span>Nombre:</span> <strong>—</strong></li>
+                    <li><span>Edad:</span> <strong>—</strong></li>
+                    <li><span>Raza:</span> <strong>—</strong></li>
+                    <li><span>Tamaño:</span> <strong>—</strong></li>
+                    <li><span>Protectora:</span> <strong>—</strong></li>
+                  </ul>
+
+                  <div class="paw-watermark" aria-hidden="true">
+                    <span class="paw-icon">🐾</span>
+                    <span class="paw-icon">🐾</span>
+                  </div>
+                </div>
+
+                <div class="pet-card-green-bar"></div>
+              </article>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </main>
+    </div>
 
-    <main id="explorar" class="container section-space">
-      <section class="filter-bar card">
-        <form class="filter-form" action="catalogo.html" method="GET">
-          <div class="form-group">
-            <label for="filtro-especie">Especie</label>
-            <select id="filtro-especie" name="especie">
-              <option value="">Todas las especies</option>
-              <option value="perro">Perros</option>
-              <option value="gato">Gatos</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="filtro-tamano">Tamaño</label>
-            <select id="filtro-tamano" name="tamano">
-              <option value="">Cualquier tamaño</option>
-              <option value="pequeno">Pequeño</option>
-              <option value="mediano">Mediano</option>
-              <option value="grande">Grande</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="filtro-edad">Edad</label>
-            <select id="filtro-edad" name="edad">
-              <option value="">Todas las edades</option>
-              <option value="cachorro">Cachorro (0 - 1 año)</option>
-              <option value="joven">Joven (1 - 3 años)</option>
-              <option value="adulto">Adulto (3+ años)</option>
-            </select>
-          </div>
-
-          <div class="filter-action">
-            <button type="submit" class="btn btn-primary btn-block">Filtrar resultados</button>
-          </div>
-        </form>
-      </section>
-
-      <div class="section-heading">
-        <div>
-          <h2>Mascotas esperando un hogar</h2>
-          <p>Cada ficha incluye visualización interactiva 3D y audio real.</p>
-        </div>
-        <span class="badge badge-neutral">6 mascotas disponibles</span>
-      </div>
-
-      <section class="pet-grid">
-        <article class="pet-card">
-          <div class="pet-image-wrap">
-            <img
-              src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=700&q=80"
-              alt="Bruno"
-            />
-            <span class="pet-status status-available">Disponible</span>
-            <button type="button" class="btn-fav" aria-label="Guardar en favoritos">♥</button>
-          </div>
-          <div class="pet-card-body">
-            <div class="pet-meta">
-              <span>Perro</span>
-              <span>•</span>
-              <span>Mediano</span>
-              <span>•</span>
-              <span>2 años</span>
-            </div>
-            <h3>Bruno</h3>
-            <p>Noble, activo y vacunado al día. Ideal para familias con patio o paseos diarios.</p>
-            <div class="pet-card-actions">
-              <a href="perfil-mascota.html" class="btn btn-primary btn-block">Ver perfil 3D</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="pet-card">
-          <div class="pet-image-wrap">
-            <img
-              src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=700&q=80"
-              alt="Luna"
-            />
-            <span class="pet-status status-available">Disponible</span>
-            <button type="button" class="btn-fav" aria-label="Guardar en favoritos">♥</button>
-          </div>
-          <div class="pet-card-body">
-            <div class="pet-meta">
-              <span>Gato</span>
-              <span>•</span>
-              <span>Pequeño</span>
-              <span>•</span>
-              <span>1 año</span>
-            </div>
-            <h3>Luna</h3>
-            <p>Tranquila, curiosa y muy afectuosa. Se adapta perfectamente a apartamentos.</p>
-            <div class="pet-card-actions">
-              <a href="perfil-mascota.html" class="btn btn-primary btn-block">Ver perfil 3D</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="pet-card">
-          <div class="pet-image-wrap">
-            <img
-              src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=700&q=80"
-              alt="Rocky"
-            />
-            <span class="pet-status status-process">En Proceso</span>
-            <button type="button" class="btn-fav" aria-label="Guardar en favoritos">♥</button>
-          </div>
-          <div class="pet-card-body">
-            <div class="pet-meta">
-              <span>Perro</span>
-              <span>•</span>
-              <span>Grande</span>
-              <span>•</span>
-              <span>3 años</span>
-            </div>
-            <h3>Rocky</h3>
-            <p>Leal, sociable con otros perros y entrenado en comandos básicos de convivencia.</p>
-            <div class="pet-card-actions">
-              <a href="perfil-mascota.html" class="btn btn-primary btn-block">Ver perfil 3D</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="pet-card">
-          <div class="pet-image-wrap">
-            <img
-              src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=700&q=80"
-              alt="Milo"
-            />
-            <span class="pet-status status-available">Disponible</span>
-            <button type="button" class="btn-fav" aria-label="Guardar en favoritos">♥</button>
-          </div>
-          <div class="pet-card-body">
-            <div class="pet-meta">
-              <span>Gato</span>
-              <span>•</span>
-              <span>Mediano</span>
-              <span>•</span>
-              <span>8 meses</span>
-            </div>
-            <h3>Milo</h3>
-            <p>Juguetón, esterilizado y desparasitado. Le encanta explorar y ronronear.</p>
-            <div class="pet-card-actions">
-              <a href="perfil-mascota.html" class="btn btn-primary btn-block">Ver perfil 3D</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="pet-card">
-          <div class="pet-image-wrap">
-            <img
-              src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=700&q=80"
-              alt="Canela"
-            />
-            <span class="pet-status status-available">Disponible</span>
-            <button type="button" class="btn-fav" aria-label="Guardar en favoritos">♥</button>
-          </div>
-          <div class="pet-card-body">
-            <div class="pet-meta">
-              <span>Perro</span>
-              <span>•</span>
-              <span>Pequeño</span>
-              <span>•</span>
-              <span>6 meses</span>
-            </div>
-            <h3>Canela</h3>
-            <p>Cachorra llena de energía, muy sociable con niños y lista para crecer en familia.</p>
-            <div class="pet-card-actions">
-              <a href="perfil-mascota.html" class="btn btn-primary btn-block">Ver perfil 3D</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="pet-card">
-          <div class="pet-image-wrap">
-            <img
-              src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=700&q=80"
-              alt="Nala"
-            />
-            <span class="pet-status status-available">Disponible</span>
-            <button type="button" class="btn-fav" aria-label="Guardar en favoritos">♥</button>
-          </div>
-          <div class="pet-card-body">
-            <div class="pet-meta">
-              <span>Gato</span>
-              <span>•</span>
-              <span>Pequeño</span>
-              <span>•</span>
-              <span>2 años</span>
-            </div>
-            <h3>Nala</h3>
-            <p>Dulce, silenciosa y muy cariñosa. Busca un hogar sereno donde recibir mimos.</p>
-            <div class="pet-card-actions">
-              <a href="perfil-mascota.html" class="btn btn-primary btn-block">Ver perfil 3D</a>
-            </div>
-          </div>
-        </article>
-      </section>
-    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const overlay = document.getElementById('loading-overlay');
+      document.querySelectorAll('a[href]:not([href="#"])').forEach((link) => {
+        link.addEventListener('click', (e) => {
+          const destino = link.getAttribute('href');
+          if (destino) {
+            e.preventDefault();
+            overlay.classList.add('active');
+            setTimeout(() => {
+              window.location.href = destino;
+            }, 350);
+          }
+        });
+      });
+    </script>
   </body>
 </html>
-
