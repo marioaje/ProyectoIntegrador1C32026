@@ -36,6 +36,12 @@ export async function consultarUsuarios() {
         dataType: "json",
         success: function (response) {
             cargarDatosTabla(response)
+        },
+        error: function (xhr, status, error) {
+            let errores = "Error al consultar usuarios" + error;
+            alert(errores);
+            alert(xhr);
+            alert(status);
         }
     });
 
@@ -227,4 +233,12 @@ function eliminarUsuario() {
 
 
 
+function mostrarSpinner() {
 
+
+}
+
+
+function ocultarSpinner() {
+
+}
