@@ -1,7 +1,3 @@
-
-
-
-
 let mensajeSpinner = `<div class="spinner-border text-primary" role="status">
                         <span class="visually-hidden">Loading...</span>
                     </div>
@@ -27,3 +23,10 @@ let mensajeSpinner = `<div class="spinner-border text-primary" role="status">
                         <span class="visually-hidden">Loading...</span>
                     </div>`;
 
+export function mostrarSpinner() {
+    document.getElementById("mensajeSpinner").innerHTML = mensajeSpinner;
+}
+
+export function ocultarSpinner() {
+    document.getElementById("mensajeSpinner").innerHTML = "";
+}

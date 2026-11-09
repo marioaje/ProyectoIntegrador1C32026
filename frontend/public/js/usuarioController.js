@@ -1,4 +1,5 @@
 import { API } from './config.js';
+import { mostrarSpinner, ocultarSpinner } from './misc.js';
 
 console.log(API.USUARIOS);
 
@@ -26,6 +27,7 @@ $(document).ready(function () {
 
 export async function consultarUsuarios() {
 
+
     // const APIResponse = await fetch(API.USUARIOS);
     // const datosUsarios = await APIResponse.json();
     // console.log(datosUsarios);
@@ -34,6 +36,12 @@ export async function consultarUsuarios() {
         type: "GET",
         url: API.USUARIOS,
         dataType: "json",
+        beforeSend: function () {
+            mostrarSpinner();
+        },
+        complete: function () {
+            ocultarSpinner();
+        },
         success: function (response) {
             cargarDatosTabla(response)
         },
@@ -116,14 +124,26 @@ function crearUsuario() {
         data: JSON.stringify(objetoUsuario),
         dataType: "json",
         contentType: "application/json",
+        beforeSend: function () {
+            mostrarSpinner();
+        },
+        complete: function () {
+            ocultarSpinner();
+        },
         success: function (response) {
             consultarUsuarios();
             $("#formUsuarioCrear")[0].reset();
+        },
+        error: function (xhr, status, error) {
+            let errores = "Error al consultar usuarios" + error;
+            alert(errores);
+            alert(xhr);
+            alert(status);
         }
     });
 
 
-    alert("Usuario creado correctamente");
+    //  alert("Usuario creado correctamente");
 
 }
 
@@ -231,14 +251,3 @@ function eliminarUsuario() {
     alert("Usuario eliminado correctamente");
 }
 
-
-
-function mostrarSpinner() {
-
-
-}
-
-
-function ocultarSpinner() {
-
-}
