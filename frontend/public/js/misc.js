@@ -33,7 +33,7 @@ export function ocultarSpinner() {
 
 //mostrar un modal 
 
-export function mostrarModal(titulo, mensaje, tipo, colorTexto) {
+export function mostrarModal(titulo, mensaje, tipo = "success", colorTexto = "white") {
     const modalBase = `
       <div
           class="modal fade"
@@ -45,7 +45,7 @@ export function mostrarModal(titulo, mensaje, tipo, colorTexto) {
         >
           <div class="modal-dialog" role="document">
             <div class="modal-content">
-              <div class="modal-header bg-${tipo} text-${colorTexto}">
+              <div class="modal-header bg-${tipo === "" ? "success" : tipo} text-${colorTexto}">
                 <h5 class="modal-title" id="modalTitleId">${titulo}</h5>
                 <button
                   type="button"
@@ -82,4 +82,30 @@ export function mostrarModal(titulo, mensaje, tipo, colorTexto) {
 
     modalMostrarMensajes.show();
 
+}
+
+
+export function mensajesAlerts(titulo, descrpcion, tipo = "success") {
+
+
+    const mensajesAlert = document.getElementById("mensajesAlert");
+
+    const mensajeAlertasPersonalizado =
+        `
+        <div
+            class="alert alert-${tipo === "" ? "success" : tipo} alert-dismissible fade show"
+            role="alert"
+            >
+            <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Close"
+            ></button>
+            <strong>${titulo}</strong> ${descrpcion}
+            </div>
+        `;
+
+
+    mensajesAlert.innerHTML = mensajeAlertasPersonalizado;
 }

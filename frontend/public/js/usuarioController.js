@@ -1,10 +1,11 @@
 import { API } from './config.js';
-import { mostrarSpinner, ocultarSpinner, mostrarModal } from './misc.js';
+import { mostrarSpinner, ocultarSpinner, mostrarModal, mensajesAlerts } from './misc.js';
 
 console.log(API.USUARIOS);
 
 $(document).ready(function () {
-    mostrarModal("Titulo Personalizado", "La aplicacion esta cargando", "warning", "black");
+    mostrarModal("Titulo Personalizado", "La aplicacion esta cargando", "", "black");
+    mensajesAlerts("Titulo Personalizado", "La aplicacion esta cargando", "");
     consultarUsuarios();
 
     $("#formUsuarioCrear").submit(function (event) {
