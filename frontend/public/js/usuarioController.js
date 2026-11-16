@@ -4,7 +4,7 @@ import { mostrarSpinner, ocultarSpinner, mostrarModal } from './misc.js';
 console.log(API.USUARIOS);
 
 $(document).ready(function () {
-    mostrarModal("Titulo Personalizado", "La aplicacion esta cargando");
+    mostrarModal("Titulo Personalizado", "La aplicacion esta cargando", "warning", "black");
     consultarUsuarios();
 
     $("#formUsuarioCrear").submit(function (event) {
@@ -47,10 +47,13 @@ export async function consultarUsuarios() {
             cargarDatosTabla(response)
         },
         error: function (xhr, status, error) {
-            let errores = "Error al consultar usuarios" + error;
-            alert(errores);
-            alert(xhr);
-            alert(status);
+            let mensajexhr = xhr.status + ", " + xhr.statusText + ", " + xhr.responseJSON + ", " + xhr.responseText;
+            let errores = "Error al consultar usuarios: " + error + " ,xhr: " + mensajexhr + " ,status: " + status;
+            //  alert(errores);
+            //alert(xhr);
+            //    alert(status);
+
+            mostrarModal("Error al consultar Usuarios", errores, "danger", "white");
         }
     });
 

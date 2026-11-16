@@ -33,7 +33,7 @@ export function ocultarSpinner() {
 
 //mostrar un modal 
 
-export function mostrarModal(titulo, mensaje) {
+export function mostrarModal(titulo, mensaje, tipo, colorTexto) {
     const modalBase = `
       <div
           class="modal fade"
@@ -45,7 +45,7 @@ export function mostrarModal(titulo, mensaje) {
         >
           <div class="modal-dialog" role="document">
             <div class="modal-content">
-              <div class="modal-header">
+              <div class="modal-header bg-${tipo} text-${colorTexto}">
                 <h5 class="modal-title" id="modalTitleId">${titulo}</h5>
                 <button
                   type="button"
